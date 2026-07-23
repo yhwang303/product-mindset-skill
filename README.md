@@ -33,46 +33,34 @@ You must explicitly define or confirm the level for a new product before impleme
 
 Profit is not required for productization. Risk requirements still apply to free software when it handles credentials, private data, payments, health information, or irreversible operations.
 
-## Start with an explicit product-definition prompt
+## Use it with one sentence
 
-Do not begin a new project with only “build me an app.” Make the level decision visible in the prompt.
+The level table is the interface. Users should not fill in a long product-definition template.
 
-If you already know the level:
+If you know the level, say only:
 
 ```text
-Use the product-mindset skill for this project.
-
-Product definition:
-- Target user:
-- Problem and usage scenario:
-- Current alternative:
-- Product level: T0 / T1 / T2 / T3
-- Why this level:
-- Explicit non-goals:
-
-Before coding, check whether the selected level matches the actual exposure and failure impact.
-Then apply the corresponding productization requirements throughout implementation.
+Use product-mindset. I am building a T2 product: <one-sentence idea>.
 ```
 
-If you are unsure:
+Or, when the product is already clear from the conversation:
 
 ```text
-Use the product-mindset skill.
-
-Before writing code:
-1. Help me define the target user, real problem, current alternative, expected users, data sensitivity, operating duration, and failure impact.
-2. Recommend T0, T1, T2, or T3 with a short reason.
-3. Ask me to explicitly confirm the level.
-
-Do not start implementation until I confirm the product level.
-
-My product idea is: ...
+This is a T2 product.
 ```
 
-For later work, state the confirmed level briefly:
+The skill then applies the corresponding workflow and derives what it can from the existing project. The agent asks one focused question only when missing information would change the level, scope, or safety boundary.
+
+If you do not know the level:
 
 ```text
-Continue this product as T2. Add team invitations without increasing onboarding friction or weakening permission boundaries.
+Use product-mindset. Help me choose T0–T3 for: <one-sentence idea>.
+```
+
+After confirmation, later requests can stay equally short:
+
+```text
+Continue as T2 and add team invitations.
 ```
 
 ## Installation
@@ -167,7 +155,7 @@ Before changing files:
 2. Install it as a personal skill at ~/.claude/skills/product-mindset/SKILL.md.
 3. If a file already exists there, back it up instead of overwriting it silently.
 4. Verify the YAML frontmatter after copying.
-5. Report the installed path and show me the explicit T0–T3 product-definition prompt.
+5. Report the installed path and show me the one-line T0–T3 usage prompt.
 ```
 
 Replace the destination with `~/.cursor/skills/product-mindset/SKILL.md` for Cursor, or `.claude/skills/product-mindset/SKILL.md` for project-only installation.
@@ -177,7 +165,7 @@ Replace the destination with `~/.cursor/skills/product-mindset/SKILL.md` for Cur
 Ask:
 
 ```text
-Use product-mindset. Explain T0–T3 in one sentence each, then ask me to explicitly define the level of my product before we write code.
+Use product-mindset. Explain T0–T3 in one sentence each, then show me the one-line prompt for selecting a level.
 ```
 
 If the skill is not found, confirm the directory name is `product-mindset`, the file is named exactly `SKILL.md`, and the YAML frontmatter begins and ends with `---`. Claude Code may need a restart if the top-level skills directory did not exist when the session started.

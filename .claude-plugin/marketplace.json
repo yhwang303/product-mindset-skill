@@ -1,0 +1,32 @@
+{
+  "name": "product-mindset-skills",
+  "owner": {
+    "name": "yhwang303"
+  },
+  "description": "Productization guardrails for AI coding agents, from prototypes to production systems.",
+  "plugins": [
+    {
+      "name": "product-mindset",
+      "displayName": "Product Mindset",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/product-mindset"
+      ],
+      "description": "Forces product level definition, evidence-based product decisions, user-friction checks, and risk-adjusted release gates.",
+      "author": {
+        "name": "yhwang303"
+      },
+      "homepage": "https://github.com/yhwang303/product-mindset-skill",
+      "repository": "https://github.com/yhwang303/product-mindset-skill",
+      "category": "development",
+      "tags": [
+        "agent-skills",
+        "product",
+        "vibe-coding",
+        "productization",
+        "ux"
+      ]
+    }
+  ]
+}
